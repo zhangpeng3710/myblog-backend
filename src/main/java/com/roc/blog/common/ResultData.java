@@ -1,5 +1,6 @@
 package com.roc.blog.common;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.text.SimpleDateFormat;
@@ -13,13 +14,12 @@ public class ResultData<T> {
     private int status;
     private String message;
     private T data;
-    private String time;
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private Date time;
 
 
     public ResultData() {
-        Long timeStamp = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        this.time = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));
+        this.time = new Date();
     }
 
 

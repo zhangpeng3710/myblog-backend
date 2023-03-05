@@ -23,7 +23,7 @@ import java.util.List;
  * @since 2023--03-03 13:36:29
  */
 @RestController
-@RequestMapping("/appUser")
+@RequestMapping("/test/appUser")
 public class AppUserController {
 
     @Resource
@@ -34,7 +34,7 @@ public class AppUserController {
         return userMapper.selectById(id);
     }
 
-    @GetMapping(value = "/userList")
+    @GetMapping(value = "/userList1")
     public ResultData getUserList() {
         List list = userMapper.selectList(Wrappers.lambdaQuery(AppUser.class));
 

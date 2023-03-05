@@ -1,7 +1,7 @@
 package com.roc.blog.aop;
 
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.roc.blog.common.ResultData;
 import lombok.SneakyThrows;
 import org.springframework.core.MethodParameter;
@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @RestControllerAdvice
 public class ResponseAdvice implements ResponseBodyAdvice<Object> {
     @Resource
-    private Gson gson;
+    private ObjectMapper mapper;
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -26,9 +26,16 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @SneakyThrows
     @Override
-    public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
+    public Object beforeBodyWrite(
+            Object body,
+            MethodParameter returnType,
+            MediaType selectedContentType,
+            Class<? extends HttpMessageConverter<?>> selectedConverterType,
+            ServerHttpRequest request,
+            ServerHttpResponse response
+    ) {
         if (body instanceof String) {
-            return gson.toJson(ResultData.success(body));
+            return mapper.writeValueAsString(ResultData.success(body));
         }
         if (body instanceof ResultData) {
             return body;
