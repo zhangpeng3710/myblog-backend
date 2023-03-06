@@ -1,4 +1,4 @@
-package com.roc.blog;
+package com.roc.blog.mybatis.plus.generator;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;

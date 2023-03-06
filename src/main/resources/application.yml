@@ -1,10 +1,15 @@
 
 server:
   port: 8080
+  servlet:
+#    context-path: /api
+    encoding:
+      charset: UTF-8
+      enabled: true
+
 spring:
   application:
     name: Blog
-
   devtools:
     restart:
       enabled: true
@@ -24,3 +29,8 @@ spring:
       path: /h2
       settings:
         web-allow-others: true
+
+springdoc:
+  api-docs:
+    version: openapi_3_0
+
