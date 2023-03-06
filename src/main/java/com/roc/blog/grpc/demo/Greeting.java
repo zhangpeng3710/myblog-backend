@@ -22,7 +22,7 @@ public final class Greeting {
      * <code>string greeting = 1;</code>
      * @return The greeting.
      */
-    String getGreeting();
+    java.lang.String getGreeting();
     /**
      * <code>string greeting = 1;</code>
      * @return The bytes for greeting.
@@ -34,7 +34,7 @@ public final class Greeting {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    String getName();
+    java.lang.String getName();
     /**
      * <code>string name = 2;</code>
      * @return The bytes for name.
@@ -59,47 +59,47 @@ public final class Greeting {
       name_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ClientInput();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Greeting.internal_static_ClientInput_descriptor;
+      return com.roc.blog.grpc.demo.Greeting.internal_static_ClientInput_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Greeting.internal_static_ClientInput_fieldAccessorTable
+      return com.roc.blog.grpc.demo.Greeting.internal_static_ClientInput_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ClientInput.class, Builder.class);
+              com.roc.blog.grpc.demo.Greeting.ClientInput.class, com.roc.blog.grpc.demo.Greeting.ClientInput.Builder.class);
     }
 
     public static final int GREETING_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile Object greeting_ = "";
+    private volatile java.lang.Object greeting_ = "";
     /**
      * <code>string greeting = 1;</code>
      * @return The greeting.
      */
-    @Override
-    public String getGreeting() {
-      Object ref = greeting_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getGreeting() {
+      java.lang.Object ref = greeting_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         greeting_ = s;
         return s;
       }
@@ -108,14 +108,14 @@ public final class Greeting {
      * <code>string greeting = 1;</code>
      * @return The bytes for greeting.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getGreetingBytes() {
-      Object ref = greeting_;
-      if (ref instanceof String) {
+      java.lang.Object ref = greeting_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         greeting_ = b;
         return b;
       } else {
@@ -125,20 +125,20 @@ public final class Greeting {
 
     public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile Object name_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
@@ -147,14 +147,14 @@ public final class Greeting {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -163,7 +163,7 @@ public final class Greeting {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -173,7 +173,7 @@ public final class Greeting {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(greeting_)) {
@@ -185,7 +185,7 @@ public final class Greeting {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -202,15 +202,15 @@ public final class Greeting {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ClientInput)) {
+      if (!(obj instanceof com.roc.blog.grpc.demo.Greeting.ClientInput)) {
         return super.equals(obj);
       }
-      ClientInput other = (ClientInput) obj;
+      com.roc.blog.grpc.demo.Greeting.ClientInput other = (com.roc.blog.grpc.demo.Greeting.ClientInput) obj;
 
       if (!getGreeting()
           .equals(other.getGreeting())) return false;
@@ -220,7 +220,7 @@ public final class Greeting {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -236,69 +236,69 @@ public final class Greeting {
       return hash;
     }
 
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientInput parseFrom(byte[] data)
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ClientInput parseFrom(java.io.InputStream input)
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientInput parseDelimitedFrom(java.io.InputStream input)
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ClientInput parseDelimitedFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ClientInput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -306,23 +306,23 @@ public final class Greeting {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ClientInput prototype) {
+    public static Builder newBuilder(com.roc.blog.grpc.demo.Greeting.ClientInput prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -332,18 +332,18 @@ public final class Greeting {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ClientInput)
-        ClientInputOrBuilder {
+        com.roc.blog.grpc.demo.Greeting.ClientInputOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Greeting.internal_static_ClientInput_descriptor;
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ClientInput_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Greeting.internal_static_ClientInput_fieldAccessorTable
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ClientInput_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ClientInput.class, Builder.class);
+                com.roc.blog.grpc.demo.Greeting.ClientInput.class, com.roc.blog.grpc.demo.Greeting.ClientInput.Builder.class);
       }
 
       // Construct using com.roc.blog.grpc.demo.Greeting.ClientInput.newBuilder()
@@ -352,11 +352,11 @@ public final class Greeting {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -365,35 +365,35 @@ public final class Greeting {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Greeting.internal_static_ClientInput_descriptor;
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ClientInput_descriptor;
       }
 
-      @Override
-      public ClientInput getDefaultInstanceForType() {
-        return ClientInput.getDefaultInstance();
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ClientInput getDefaultInstanceForType() {
+        return com.roc.blog.grpc.demo.Greeting.ClientInput.getDefaultInstance();
       }
 
-      @Override
-      public ClientInput build() {
-        ClientInput result = buildPartial();
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ClientInput build() {
+        com.roc.blog.grpc.demo.Greeting.ClientInput result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public ClientInput buildPartial() {
-        ClientInput result = new ClientInput(this);
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ClientInput buildPartial() {
+        com.roc.blog.grpc.demo.Greeting.ClientInput result = new com.roc.blog.grpc.demo.Greeting.ClientInput(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ClientInput result) {
+      private void buildPartial0(com.roc.blog.grpc.demo.Greeting.ClientInput result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.greeting_ = greeting_;
@@ -403,50 +403,50 @@ public final class Greeting {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ClientInput) {
-          return mergeFrom((ClientInput)other);
+        if (other instanceof com.roc.blog.grpc.demo.Greeting.ClientInput) {
+          return mergeFrom((com.roc.blog.grpc.demo.Greeting.ClientInput)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ClientInput other) {
-        if (other == ClientInput.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.roc.blog.grpc.demo.Greeting.ClientInput other) {
+        if (other == com.roc.blog.grpc.demo.Greeting.ClientInput.getDefaultInstance()) return this;
         if (!other.getGreeting().isEmpty()) {
           greeting_ = other.greeting_;
           bitField0_ |= 0x00000001;
@@ -462,18 +462,18 @@ public final class Greeting {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -510,21 +510,21 @@ public final class Greeting {
       }
       private int bitField0_;
 
-      private Object greeting_ = "";
+      private java.lang.Object greeting_ = "";
       /**
        * <code>string greeting = 1;</code>
        * @return The greeting.
        */
-      public String getGreeting() {
-        Object ref = greeting_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getGreeting() {
+        java.lang.Object ref = greeting_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           greeting_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -533,11 +533,11 @@ public final class Greeting {
        */
       public com.google.protobuf.ByteString
           getGreetingBytes() {
-        Object ref = greeting_;
+        java.lang.Object ref = greeting_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           greeting_ = b;
           return b;
         } else {
@@ -550,7 +550,7 @@ public final class Greeting {
        * @return This builder for chaining.
        */
       public Builder setGreeting(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         greeting_ = value;
         bitField0_ |= 0x00000001;
@@ -582,21 +582,21 @@ public final class Greeting {
         return this;
       }
 
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
        * @return The name.
        */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -605,11 +605,11 @@ public final class Greeting {
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
-        Object ref = name_;
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -622,7 +622,7 @@ public final class Greeting {
        * @return This builder for chaining.
        */
       public Builder setName(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
         bitField0_ |= 0x00000002;
@@ -653,13 +653,13 @@ public final class Greeting {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -670,18 +670,18 @@ public final class Greeting {
     }
 
     // @@protoc_insertion_point(class_scope:ClientInput)
-    private static final ClientInput DEFAULT_INSTANCE;
+    private static final com.roc.blog.grpc.demo.Greeting.ClientInput DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientInput();
+      DEFAULT_INSTANCE = new com.roc.blog.grpc.demo.Greeting.ClientInput();
     }
 
-    public static ClientInput getDefaultInstance() {
+    public static com.roc.blog.grpc.demo.Greeting.ClientInput getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ClientInput>
         PARSER = new com.google.protobuf.AbstractParser<ClientInput>() {
-      @Override
+      @java.lang.Override
       public ClientInput parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -705,13 +705,13 @@ public final class Greeting {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ClientInput> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public ClientInput getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.roc.blog.grpc.demo.Greeting.ClientInput getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -725,7 +725,7 @@ public final class Greeting {
      * <code>string message = 1;</code>
      * @return The message.
      */
-    String getMessage();
+    java.lang.String getMessage();
     /**
      * <code>string message = 1;</code>
      * @return The bytes for message.
@@ -749,47 +749,47 @@ public final class Greeting {
       message_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
+    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ServerOutput();
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Greeting.internal_static_ServerOutput_descriptor;
+      return com.roc.blog.grpc.demo.Greeting.internal_static_ServerOutput_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Greeting.internal_static_ServerOutput_fieldAccessorTable
+      return com.roc.blog.grpc.demo.Greeting.internal_static_ServerOutput_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ServerOutput.class, Builder.class);
+              com.roc.blog.grpc.demo.Greeting.ServerOutput.class, com.roc.blog.grpc.demo.Greeting.ServerOutput.Builder.class);
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile Object message_ = "";
+    private volatile java.lang.Object message_ = "";
     /**
      * <code>string message = 1;</code>
      * @return The message.
      */
-    @Override
-    public String getMessage() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         message_ = s;
         return s;
       }
@@ -798,14 +798,14 @@ public final class Greeting {
      * <code>string message = 1;</code>
      * @return The bytes for message.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      Object ref = message_;
-      if (ref instanceof String) {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         message_ = b;
         return b;
       } else {
@@ -814,7 +814,7 @@ public final class Greeting {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -824,7 +824,7 @@ public final class Greeting {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
@@ -833,7 +833,7 @@ public final class Greeting {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -847,15 +847,15 @@ public final class Greeting {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ServerOutput)) {
+      if (!(obj instanceof com.roc.blog.grpc.demo.Greeting.ServerOutput)) {
         return super.equals(obj);
       }
-      ServerOutput other = (ServerOutput) obj;
+      com.roc.blog.grpc.demo.Greeting.ServerOutput other = (com.roc.blog.grpc.demo.Greeting.ServerOutput) obj;
 
       if (!getMessage()
           .equals(other.getMessage())) return false;
@@ -863,7 +863,7 @@ public final class Greeting {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -877,69 +877,69 @@ public final class Greeting {
       return hash;
     }
 
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerOutput parseFrom(byte[] data)
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ServerOutput parseFrom(java.io.InputStream input)
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ServerOutput parseDelimitedFrom(java.io.InputStream input)
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ServerOutput parseDelimitedFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ServerOutput parseFrom(
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -947,23 +947,23 @@ public final class Greeting {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @Override
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ServerOutput prototype) {
+    public static Builder newBuilder(com.roc.blog.grpc.demo.Greeting.ServerOutput prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -973,18 +973,18 @@ public final class Greeting {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ServerOutput)
-        ServerOutputOrBuilder {
+        com.roc.blog.grpc.demo.Greeting.ServerOutputOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Greeting.internal_static_ServerOutput_descriptor;
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ServerOutput_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Greeting.internal_static_ServerOutput_fieldAccessorTable
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ServerOutput_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ServerOutput.class, Builder.class);
+                com.roc.blog.grpc.demo.Greeting.ServerOutput.class, com.roc.blog.grpc.demo.Greeting.ServerOutput.Builder.class);
       }
 
       // Construct using com.roc.blog.grpc.demo.Greeting.ServerOutput.newBuilder()
@@ -993,11 +993,11 @@ public final class Greeting {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -1005,85 +1005,85 @@ public final class Greeting {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Greeting.internal_static_ServerOutput_descriptor;
+        return com.roc.blog.grpc.demo.Greeting.internal_static_ServerOutput_descriptor;
       }
 
-      @Override
-      public ServerOutput getDefaultInstanceForType() {
-        return ServerOutput.getDefaultInstance();
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ServerOutput getDefaultInstanceForType() {
+        return com.roc.blog.grpc.demo.Greeting.ServerOutput.getDefaultInstance();
       }
 
-      @Override
-      public ServerOutput build() {
-        ServerOutput result = buildPartial();
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ServerOutput build() {
+        com.roc.blog.grpc.demo.Greeting.ServerOutput result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public ServerOutput buildPartial() {
-        ServerOutput result = new ServerOutput(this);
+      @java.lang.Override
+      public com.roc.blog.grpc.demo.Greeting.ServerOutput buildPartial() {
+        com.roc.blog.grpc.demo.Greeting.ServerOutput result = new com.roc.blog.grpc.demo.Greeting.ServerOutput(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(ServerOutput result) {
+      private void buildPartial0(com.roc.blog.grpc.demo.Greeting.ServerOutput result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.message_ = message_;
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ServerOutput) {
-          return mergeFrom((ServerOutput)other);
+        if (other instanceof com.roc.blog.grpc.demo.Greeting.ServerOutput) {
+          return mergeFrom((com.roc.blog.grpc.demo.Greeting.ServerOutput)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ServerOutput other) {
-        if (other == ServerOutput.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.roc.blog.grpc.demo.Greeting.ServerOutput other) {
+        if (other == com.roc.blog.grpc.demo.Greeting.ServerOutput.getDefaultInstance()) return this;
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           bitField0_ |= 0x00000001;
@@ -1094,18 +1094,18 @@ public final class Greeting {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -1137,21 +1137,21 @@ public final class Greeting {
       }
       private int bitField0_;
 
-      private Object message_ = "";
+      private java.lang.Object message_ = "";
       /**
        * <code>string message = 1;</code>
        * @return The message.
        */
-      public String getMessage() {
-        Object ref = message_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1160,11 +1160,11 @@ public final class Greeting {
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        Object ref = message_;
+        java.lang.Object ref = message_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           message_ = b;
           return b;
         } else {
@@ -1177,7 +1177,7 @@ public final class Greeting {
        * @return This builder for chaining.
        */
       public Builder setMessage(
-          String value) {
+          java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         message_ = value;
         bitField0_ |= 0x00000001;
@@ -1208,13 +1208,13 @@ public final class Greeting {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1225,18 +1225,18 @@ public final class Greeting {
     }
 
     // @@protoc_insertion_point(class_scope:ServerOutput)
-    private static final ServerOutput DEFAULT_INSTANCE;
+    private static final com.roc.blog.grpc.demo.Greeting.ServerOutput DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ServerOutput();
+      DEFAULT_INSTANCE = new com.roc.blog.grpc.demo.Greeting.ServerOutput();
     }
 
-    public static ServerOutput getDefaultInstance() {
+    public static com.roc.blog.grpc.demo.Greeting.ServerOutput getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ServerOutput>
         PARSER = new com.google.protobuf.AbstractParser<ServerOutput>() {
-      @Override
+      @java.lang.Override
       public ServerOutput parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1260,13 +1260,13 @@ public final class Greeting {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ServerOutput> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public ServerOutput getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.roc.blog.grpc.demo.Greeting.ServerOutput getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1290,7 +1290,7 @@ public final class Greeting {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\016greeting.proto\"-\n\013ClientInput\022\020\n\010greet" +
       "ing\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\037\n\014ServerOutput\022" +
       "\017\n\007message\030\001 \001(\t21\n\007Greeter\022&\n\005greet\022\014.C" +
@@ -1306,13 +1306,13 @@ public final class Greeting {
     internal_static_ClientInput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientInput_descriptor,
-        new String[] { "Greeting", "Name", });
+        new java.lang.String[] { "Greeting", "Name", });
     internal_static_ServerOutput_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ServerOutput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerOutput_descriptor,
-        new String[] { "Message", });
+        new java.lang.String[] { "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
