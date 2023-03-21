@@ -10,13 +10,16 @@
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.roc</groupId>
     <artifactId>blog-server-demo</artifactId>
     <version>${revision}</version>
     <name>blog-server-demo</name>
     <description>blog-server-demo</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -88,6 +91,7 @@
                     <protoSourceRoot>src/main/resources/proto</protoSourceRoot>
                     <clearOutputDirectory>false</clearOutputDirectory>
                     <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+                    <!--suppress UnresolvedMavenProperty -->
                     <protocArtifact>com.google.protobuf:protoc:3.21.12:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
                 </configuration>
