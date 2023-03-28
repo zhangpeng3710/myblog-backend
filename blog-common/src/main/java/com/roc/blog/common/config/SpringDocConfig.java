@@ -1,4 +1,4 @@
-package com.roc.blog.server.config;
+package com.roc.blog.common.config;
 
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 description = "Blog backend ...",
                 contact = @Contact(
                         name = "Peng",
-                        email = "kldzp@126.com"
+                        email = "zhangpeng3710@gmail.com"
                 ),
                 license = @License(
                         name = "MIT Licence",

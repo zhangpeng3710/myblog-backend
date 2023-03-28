@@ -18,5 +18,13 @@
         <module>blog-server-demo</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.roc</groupId>
+            <artifactId>blog-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

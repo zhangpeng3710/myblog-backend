@@ -1,7 +1,8 @@
-package com.roc.blog.server.aop;
+package com.roc.blog.common.aop;
+
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.roc.blog.server.common.ResultData;
+import com.roc.blog.common.constant.ResponseData;
 import lombok.SneakyThrows;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -42,12 +43,12 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
             ServerHttpResponse response
     ) {
         if (body instanceof String) {
-            return mapper.writeValueAsString(ResultData.success(body));
+            return mapper.writeValueAsString(ResponseData.success(body));
         }
-        if (body instanceof ResultData) {
+        if (body instanceof ResponseData) {
             return body;
         }
-        return ResultData.success(body);
+        return ResponseData.success(body);
     }
 }
 

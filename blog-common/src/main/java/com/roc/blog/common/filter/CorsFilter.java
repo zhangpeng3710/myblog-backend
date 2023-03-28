@@ -1,4 +1,4 @@
-package com.roc.blog.server.filter;
+package com.roc.blog.common.filter;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
