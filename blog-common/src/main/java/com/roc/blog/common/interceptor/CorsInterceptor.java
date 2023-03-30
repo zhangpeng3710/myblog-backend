@@ -1,40 +1,34 @@
-package com.roc.blog.common.filter;
+package com.roc.blog.common.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.NonNullApi;
+import org.springframework.web.servlet.HandlerInterceptor;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
- * Filter for CORS
- * if you want to use this filter in other module, you need to extend from this class
+ * Interceptor for CORS
  * <p>
  * filter -> interceptor -> controllerAdvice -> @Aspect -> controller
  *
  * @author Zhang Peng
  * @since 2023/3/27 16:00
  */
-@Slf4j
-public class CorsFilter implements Filter {
 
+@Slf4j
+public class CorsInterceptor implements HandlerInterceptor {
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        log.debug("CorsFilter is executed");
+    public boolean preHandle(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            Object handler) {
 
-        HttpServletResponse response = (HttpServletResponse) res;
-        HttpServletRequest request = (HttpServletRequest) req;
-
+        log.debug("CorsInterceptor preHandle is executed");
         log.debug(request.getMethod());
 
-        response.setHeader("Access-Control-Allow-Origin",
-                request.getHeader("Origin"));
         response.setHeader("Access-Control-Allow-Origin",
                 request.getHeader("Origin"));
         response.setHeader("Access-Control-Allow-Methods",
@@ -46,7 +40,7 @@ public class CorsFilter implements Filter {
         response.setHeader("Access-Control-Allow-Credentials",
                 "true");
 
-        chain.doFilter(req, res);
+        return true;
     }
 
 }

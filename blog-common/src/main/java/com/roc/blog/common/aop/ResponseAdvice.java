@@ -9,9 +9,19 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import javax.annotation.Resource;
+
+/**
+ * global response advice
+ *
+ * filter -> interceptor -> controllerAdvice -> @Aspect -> controller
+ *
+ * @author Zhang Peng
+ * @since 2023/3/27 16:00
+ */
 
 @RestControllerAdvice
 public class ResponseAdvice implements ResponseBodyAdvice<Object> {
@@ -22,7 +32,7 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
      * 判断是否要执行 beforeBodyWrite 方法，true为执行，false不执行，有注解标记的时候处理返回值
      * 这里整合swagger出现了问题，swagger相关的不拦截
      */
-    @Override
+    @NonNull
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
         return !(returnType.getDeclaringClass().getName().contains("OpenApi")
                 || returnType.getDeclaringClass().getName().contains("openapi")
