@@ -140,7 +140,6 @@
         <Logger name="org.hibernate" level="warn"/>
         <Logger name="com.zaxxer.hikari" level="info"/>
         <Logger name="org.quartz" level="info"/>
-        <Logger name="com.andya.demo" level="debug"/>
     </Loggers>
 
 </Configuration>
