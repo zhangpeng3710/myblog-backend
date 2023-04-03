@@ -1,4 +1,4 @@
-package com.roc.blog.server.grpc.demo;
+package com.roc.blog.server.grpc.demo.simple;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-import com.roc.blog.server.grpc.demo.Greeting.ServerOutput;
-import com.roc.blog.server.grpc.demo.Greeting.ClientInput;
+import com.roc.blog.server.grpc.demo.simple.Greeting.ServerOutput;
+import com.roc.blog.server.grpc.demo.simple.Greeting.ClientInput;
 
 public class GreetServer {
 

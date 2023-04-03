@@ -1,4 +1,4 @@
-package com.roc.blog.server.grpc.demo;
+package com.roc.blog.server.grpc.demo.simple;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 

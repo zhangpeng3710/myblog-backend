@@ -1,4 +1,4 @@
-package com.roc.blog.server.grpc.demo;
+package com.roc.blog.server.grpc.demo.simple;
 
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.roc.blog.server.grpc.demo.Greeting.ServerOutput;
-import com.roc.blog.server.grpc.demo.Greeting.ClientInput;
+import com.roc.blog.server.grpc.demo.simple.Greeting.ServerOutput;
+import com.roc.blog.server.grpc.demo.simple.Greeting.ClientInput;
 
 public class GreetClient {
     private static final Logger logger = Logger.getLogger(GreetClient.class.getName());
