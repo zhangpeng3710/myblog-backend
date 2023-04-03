@@ -124,7 +124,7 @@
         <!-- 根日志设置 -->
         <Root level="debug">
             <AppenderRef ref="allFileAppender" level="all"/>
-            <AppenderRef ref="consoleAppender" level="debug"/>
+            <AppenderRef ref="consoleAppender" level="info"/>
 <!--            <AppenderRef ref="infoFileAppender" level="info"/>-->
             <AppenderRef ref="errorFileAppender" level="error"/>
             <AppenderRef ref="errorJsonAppender" level="error"/>
