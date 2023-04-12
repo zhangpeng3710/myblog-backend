@@ -23,6 +23,7 @@
         <module>blog-common</module>
         <module>blog-server</module>
         <module>blog-auth</module>
+        <module>blog-registry-center</module>
     </modules>
 
     <properties>
@@ -93,6 +94,11 @@
                 <version>${spring.cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${springboot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
