@@ -46,11 +46,11 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(
             Object body,
-            MethodParameter returnType,
-            MediaType selectedContentType,
-            Class<? extends HttpMessageConverter<?>> selectedConverterType,
-            ServerHttpRequest request,
-            ServerHttpResponse response
+            @NonNull MethodParameter returnType,
+            @NonNull MediaType selectedContentType,
+            @NonNull Class<? extends HttpMessageConverter<?>> selectedConverterType,
+            @NonNull ServerHttpRequest request,
+            @NonNull ServerHttpResponse response
     ) {
         if (body instanceof String) {
             return mapper.writeValueAsString(ResponseData.success(body));

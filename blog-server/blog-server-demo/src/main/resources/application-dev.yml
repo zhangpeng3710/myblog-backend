@@ -51,17 +51,27 @@ spring:
         max-idle: 8
         # 连接池中的最小空闲连接
         min-idle: 0
-    cache:
-      type: redis
-      redis:
-        #是否缓存空值,防止缓存穿透
-        cache-null-values: true
-        #缓存过期时间（单位为毫秒）
-        time-to-live: 10000
-        #缓存前缀，用于区分其他缓存,不指定前缀，默认使用缓存的名字作为前缀
-        #key-prefix: CACHE_
-        #是否使用缓存前缀，false不使用任何缓存前缀
-        #use-key-prefix: false
+  cache:
+    type: redis
+    redis:
+      #是否缓存空值,防止缓存穿透
+      cache-null-values: true
+      #缓存过期时间（单位为毫秒）
+      time-to-live: 10000
+      #缓存前缀，用于区分其他缓存,不指定前缀，默认使用缓存的名字作为前缀
+      #key-prefix: CACHE_
+      #是否使用缓存前缀，false不使用任何缓存前缀
+      #use-key-prefix: false
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance-info-replication-interval-seconds: 30
+    registry-fetch-interval-seconds: 3
+    serviceUrl:
+      defaultZone: http://blog:123456@localhost:8001/register/eureka/
 
 springdoc:
   api-docs:
