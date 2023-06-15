@@ -24,6 +24,7 @@
         <module>blog-server</module>
         <module>blog-auth</module>
         <module>blog-registry-center</module>
+        <module>blog-agent</module>
     </modules>
 
     <properties>
