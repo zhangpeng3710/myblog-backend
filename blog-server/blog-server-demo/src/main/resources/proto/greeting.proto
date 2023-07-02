@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "com.roc.blog.server.grpc.demo";
+option java_package = "com.roc.blog.server.grpc.demo.proto";
 
 service Greeter {
   rpc greet (ClientInput) returns (ServerOutput) {}

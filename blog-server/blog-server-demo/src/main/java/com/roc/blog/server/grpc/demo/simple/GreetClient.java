@@ -1,5 +1,8 @@
 package com.roc.blog.server.grpc.demo.simple;
 
+import com.roc.blog.server.grpc.demo.proto.GreeterGrpc;
+import com.roc.blog.server.grpc.demo.proto.Greeting.ClientInput;
+import com.roc.blog.server.grpc.demo.proto.Greeting.ServerOutput;
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -7,9 +10,6 @@ import io.grpc.StatusRuntimeException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.roc.blog.server.grpc.demo.simple.Greeting.ServerOutput;
-import com.roc.blog.server.grpc.demo.simple.Greeting.ClientInput;
 
 public class GreetClient {
     private static final Logger logger = Logger.getLogger(GreetClient.class.getName());

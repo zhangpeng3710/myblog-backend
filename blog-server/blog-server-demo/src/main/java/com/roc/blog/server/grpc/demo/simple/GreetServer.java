@@ -1,14 +1,14 @@
 package com.roc.blog.server.grpc.demo.simple;
 
+import com.roc.blog.server.grpc.demo.proto.GreeterGrpc;
+import com.roc.blog.server.grpc.demo.proto.Greeting.ClientInput;
+import com.roc.blog.server.grpc.demo.proto.Greeting.ServerOutput;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-
-import com.roc.blog.server.grpc.demo.simple.Greeting.ServerOutput;
-import com.roc.blog.server.grpc.demo.simple.Greeting.ClientInput;
 
 public class GreetServer {
 
