@@ -1,4 +1,4 @@
-package com.roc.blog.server.grpc.demo.blockingStubEcho;
+package com.roc.blog.server.grpc.demo.echo;
 
 import com.roc.blog.server.grpc.demo.proto.EchoGrpc;
 import com.roc.blog.server.grpc.demo.proto.EchoOuterClass.EchoRequest;
@@ -29,17 +29,14 @@ public class Server {
 
         log.info("Server started, listening on " + port);
 
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                log.warning("Shutting down gRPC server");
-                try {
-                    server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
-                } catch (InterruptedException e) {
-                    e.printStackTrace(System.err);
-                }
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            log.warning("Shutting down gRPC server");
+            try {
+                server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace(System.err);
             }
-        });
+        }));
     }
 
     static class EchoImpl extends EchoGrpc.EchoImplBase {
@@ -61,8 +58,8 @@ public class Server {
 
         @Override
         public void serverStreamingEcho(EchoRequest request, StreamObserver<EchoResponse> responseObserver) {
+            log.info("Got request from client: " + request);
             for (int i = 0; i < 3; i++) {
-                log.info("Got request from client: " + request);
                 EchoResponse reply = EchoResponse.newBuilder()
                         .setMessage("Server says: " + i)
                         .build();
@@ -73,11 +70,13 @@ public class Server {
 
         @Override
         public StreamObserver<EchoRequest> clientStreamingEcho(StreamObserver<EchoResponse> responseObserver) {
-            return new StreamObserver<EchoRequest>() {
-                int echotimes = 0;
+            return new StreamObserver<>() {
+                int echoTimes = 0;
+
                 @Override
                 public void onNext(EchoRequest echoRequest) {
-                    echotimes++;
+                    //each time what client send to you
+                    echoTimes++;
                     log.info(echoRequest.getMessage());
                 }
 
@@ -88,8 +87,9 @@ public class Server {
 
                 @Override
                 public void onCompleted() {
+                    //you can do some work here and response to client before complete the stream
                     EchoResponse reply = EchoResponse.newBuilder()
-                            .setMessage("Server says receive echo times: " + echotimes)
+                            .setMessage("Server says receive echo times: " + echoTimes)
                             .build();
                     responseObserver.onNext(reply);
                     responseObserver.onCompleted();
@@ -99,7 +99,30 @@ public class Server {
 
         @Override
         public StreamObserver<EchoRequest> bidirectionalStreamingEcho(StreamObserver<EchoResponse> responseObserver) {
-            return super.bidirectionalStreamingEcho(responseObserver);
+            return new StreamObserver<>() {
+                int echoTimes = 0;
+
+                @Override
+                public void onNext(EchoRequest echoRequest) {
+                    //each time what client send to you, and do some work response to client
+                    echoTimes++;
+                    EchoResponse reply = EchoResponse.newBuilder()
+                            .setMessage("Server says receive echo times: " + echoTimes)
+                            .build();
+                    responseObserver.onNext(reply);
+                    log.info(echoRequest.getMessage());
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    log.warning("Error while reading echo stream; " + throwable);
+                }
+
+                @Override
+                public void onCompleted() {
+                    responseObserver.onCompleted();
+                }
+            };
         }
     }
 }
