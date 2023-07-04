@@ -1,5 +1,6 @@
 package com.roc.blog.agent;
 
+import lombok.Data;
 import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
 import net.bytebuddy.implementation.bind.annotation.SuperCall;
@@ -12,8 +13,10 @@ import java.util.concurrent.Callable;
  * @Author: Zhang Peng
  * @Date: 2023/6/15
  */
+
 public class MethodCostTime {
 
+    public static String message = " 方法耗时： ";
     @RuntimeType
     public static Object intercept(@Origin Method method, @SuperCall Callable<?> callable) throws Exception {
         long start = System.currentTimeMillis();
@@ -21,7 +24,7 @@ public class MethodCostTime {
             //原有函数执行
             return callable.call();
         } finally {
-            System.out.println(method + " 方法耗时： " + (System.currentTimeMillis() - start) + "ms");
+            System.out.println(method + message + (System.currentTimeMillis() - start) + "ms");
         }
     }
 

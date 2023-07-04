@@ -64,6 +64,14 @@ public class Agent {
                 .transform(transformer)
                 .with(listener)
                 .installOn(inst);
+
+        new Thread(
+                () -> {
+                    GrpcServer server = new GrpcServer();
+                    server.initGrpcServer();
+                }
+        ).start();
+
     }
 
 }

@@ -123,7 +123,6 @@
     <Loggers>
         <!-- 根日志设置 -->
         <Root level="debug">
-            <Appender-ref ref="consoleAppender" />
             <AppenderRef ref="allFileAppender" level="all"/>
             <AppenderRef ref="consoleAppender" level="info"/>
 <!--            <AppenderRef ref="infoFileAppender" level="info"/>-->

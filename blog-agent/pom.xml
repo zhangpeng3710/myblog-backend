@@ -13,6 +13,10 @@
 
 	<properties>
 		<bytebuddy.version>1.14.5</bytebuddy.version>
+		<grpc.version>1.55.3</grpc.version>
+		<protoc.version>3.22.3</protoc.version>
+		<annotations-api.version>6.0.53</annotations-api.version>
+		<lombok.version>1.18.26</lombok.version>
 		<java.version>17</java.version>
 		<project.encoding>UTF-8</project.encoding>
 	</properties>
@@ -28,10 +32,43 @@
 			<artifactId>byte-buddy-agent</artifactId>
 			<version>${bytebuddy.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-netty-shaded</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-stub</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-protobuf</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>annotations-api</artifactId>
+			<version>${annotations-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<extensions>
+			<extension>
+				<groupId>kr.motd.maven</groupId>
+				<artifactId>os-maven-plugin</artifactId>
+				<version>1.7.1</version>
+			</extension>
+		</extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -44,42 +81,32 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.3.0</version>
+				<groupId>org.xolstice.maven.plugins</groupId>
+				<artifactId>protobuf-maven-plugin</artifactId>
+				<version>0.6.1</version>
 				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<archive>
-						<manifestEntries>
-							<Premain-Class>com.roc.blog.agent.Agent</Premain-Class>
-							<Agent-Class>com.roc.blog.agent.Agent</Agent-Class>
-							<Can-Redefine-Classes>true</Can-Redefine-Classes>
-							<Can-Retransform-Classes>true</Can-Retransform-Classes>
-						</manifestEntries>
-						<!--指定MANIFEST.MF文件路径-->
-<!--						<manifestFile>-->
-<!--							src/main/resources/META-INF/MANIFEST.MF-->
-<!--						</manifestFile>-->
-						<manifest>
-							<addClasspath>true</addClasspath>
-						</manifest>
-					</archive>
+					<protoSourceRoot>src/main/resources/proto</protoSourceRoot>
+					<clearOutputDirectory>false</clearOutputDirectory>
+					<outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+					<!-- generate gRPC service file: **Grpc-->
+					<protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+					<pluginId>grpc-java</pluginId>
+					<!-- generate gRPC service file: **Grpc-->
+					<pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
 				</configuration>
 				<executions>
 					<execution>
-						<phase>package</phase>
 						<goals>
-							<goal>single</goal>
+							<goal>compile</goal>
+							<goal>compile-custom</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<!--打包插件，把依赖一起打包-->
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.2.4</version>
+				<version>3.4.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -89,10 +116,24 @@
 					</execution>
 				</executions>
 				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<transformers>
+						<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+							<manifestEntries>
+								<Premain-Class>com.roc.blog.agent.Agent</Premain-Class>
+								<Agent-Class>com.roc.blog.agent.Agent</Agent-Class>
+								<Can-Redefine-Classes>true</Can-Redefine-Classes>
+								<Can-Retransform-Classes>true</Can-Retransform-Classes>
+							</manifestEntries>
+						</transformer>
+					</transformers>
+
 					<artifactSet>
 						<includes>
 							<include>net.bytebuddy:byte-buddy:jar:</include>
 							<include>net.bytebuddy:byte-buddy-agent:jar:</include>
+							<include>org.slf4j:slf4j-api:jar:</include>
+							<include>ch.qos.logback:logback-classic:jar:</include>
 						</includes>
 					</artifactSet>
 				</configuration>
