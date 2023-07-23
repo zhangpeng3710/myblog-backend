@@ -40,10 +40,6 @@ public class Server {
     }
 
     static class EchoImpl extends EchoGrpc.EchoImplBase {
-        @Override
-        public void UnaryEcho(EchoRequest req, StreamObserver<EchoResponse> responseObserver) {
-
-        }
 
         @Override
         public void unaryEcho(EchoRequest request, StreamObserver<EchoResponse> responseObserver) {

@@ -1,7 +1,5 @@
 package com.roc.blog.server.grpc.demo.proto;
 
-import io.grpc.stub.StreamObserver;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -239,8 +237,6 @@ public final class EchoGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return EchoGrpc.bindService(this);
     }
-
-    public abstract void UnaryEcho(EchoOuterClass.EchoRequest req, StreamObserver<EchoOuterClass.EchoResponse> responseObserver);
   }
 
   /**
